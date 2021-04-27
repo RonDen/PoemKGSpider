@@ -20,7 +20,7 @@ class PoemkgspiderPipeline:
         return item
 
 
-class CommonJsonPipelin:
+class CommonJsonPipeline:
     def __init__(self, file_prefix):
         self.result_file = 'results/{}/{}-{}.json'.format(file_prefix, file_prefix, datetime.now().strftime("%Y-%m-%d-%H_%M_%S"))
         self.result_writer = open(self.result_file, 'w', encoding='utf8')
@@ -34,7 +34,7 @@ class CommonJsonPipelin:
         self.result_writer.close()
 
 
-class NYPoemJsonPipeline(CommonJsonPipelin):
+class NYPoemJsonPipeline(CommonJsonPipeline):
     def __init__(self):
         super(NYPoemJsonPipeline, self).__init__('poem-dynasty')
 
@@ -58,7 +58,7 @@ class NYPoemMongoPipeline:
         return item
 
 
-class NYAuthorJsonPipeline(CommonJsonPipelin):
+class NYAuthorJsonPipeline(CommonJsonPipeline):
     def __init__(self):
         super(NYAuthorJsonPipeline, self).__init__('author')
 
@@ -82,7 +82,7 @@ class NYAuthorMongoPipeline:
         return item
 
 
-class NYTopicJsonPipeline(CommonJsonPipelin):
+class NYTopicJsonPipeline(CommonJsonPipeline):
     def __init__(self):
         super(NYTopicJsonPipeline, self).__init__('topic')
 
@@ -106,7 +106,7 @@ class NYTopicMongoPipeline:
         return item
 
 
-class NYBookJsonPipeline(CommonJsonPipelin):
+class NYBookJsonPipeline(CommonJsonPipeline):
     def __init__(self):
         super(NYBookJsonPipeline, self).__init__('book')
 
@@ -131,7 +131,7 @@ class NYBookMongoPipeline:
         return item
 
 
-class NYDynastyJsonPipeline(CommonJsonPipelin):
+class NYDynastyJsonPipeline(CommonJsonPipeline):
     def __init__(self):
         super(NYDynastyJsonPipeline, self).__init__('dynasty')
 
@@ -155,7 +155,7 @@ class NYDynastyMongoPipeline:
         return item
 
 
-class NYIdiomJsonPipeline(CommonJsonPipelin):
+class NYIdiomJsonPipeline(CommonJsonPipeline):
     def __init__(self):
         super(NYIdiomJsonPipeline, self).__init__('idiom')
 
@@ -179,7 +179,7 @@ class NYIdiomMongoPipeline:
         return item
 
 
-class NYMingjvJsonPipeline(CommonJsonPipelin):
+class NYMingjvJsonPipeline(CommonJsonPipeline):
     def __init__(self):
         super(NYMingjvJsonPipeline, self).__init__('mingjv')
 
